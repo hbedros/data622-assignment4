@@ -20,7 +20,7 @@ cd <repository-name>
 ### Create and Activate the Environment
 - **Windows:**
   ```bash
-  python -m venv venv
+  python -m venv .venv
   venv\Scripts\activate
   ```
 
