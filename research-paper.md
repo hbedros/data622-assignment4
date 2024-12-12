@@ -95,9 +95,9 @@ For our first dataset focused on depression prediction, we implemented:
 
 **Decision Trees**: This approach achieved an 88.1% accuracy, providing clear decision paths that helped us understand how factors like academic pressure and sleep patterns influence depression risk.
 
-**Random Forest**: By combining multiple decision trees, this model reached an impressive 95.0% accuracy, showing how ensemble methods can better capture complex patterns in mental health data.
+**Random Forest**: This ensemble method achieved a high 95.0% accuracy, capturing complex patterns in mental health data.
 
-**Logistic Regression**: Our most successful traditional model for depression prediction, achieving 96.0% accuracy. Its success suggests that many risk factors for depression have relatively linear relationships with the outcome.
+**Logistic Regression**: Our most successful model for depression prediction, achieving 96.0% accuracy. This indicates that many risk factors for depression have relatively linear relationships with the outcome.
 
 For our second dataset focusing on GPA prediction, we used:
 
@@ -146,13 +146,11 @@ We then explored more sophisticated approaches:
 | Dataset 2 | K-nearest neighbors | N/A | 0.1785 | 0.2515 |
 
 ## What We Discovered
-Our analysis revealed that **Random Forest** was the best-performing model overall, achieving an impressive 95.0% accuracy for depression prediction and the lowest MAE and RMSE in GPA prediction during Phase 1. This highlights the strength of ensemble methods in handling complex patterns in our data.
+Our analysis revealed that **Logistic Regression** was the best-performing model for depression prediction in Phase 1, achieving the highest accuracy (96.0%). For GPA prediction in Phase 1, **Random Forest Regression** emerged as the top performer with the lowest RMSE (0.23).
 
-In Phase 2, **K-nearest Neighbors (KNN)** stood out as the top performer, particularly effective with our smaller datasets. KNN achieved 87.1% accuracy in predicting depression risk and the most precise GPA predictions with an error margin of just 0.25 points.
+In Phase 2, **K-nearest Neighbors (KNN)** stood out as the best model, particularly effective with smaller datasets. It achieved 87.1% accuracy in predicting depression risk and the most precise GPA predictions with an RMSE of 0.25.
 
 While neural networks showed potential in detecting depression risk factors, they struggled with the relatively small dataset size, leading to less consistent results. Traditional techniques like PCA and bootstrapping provided useful insights but were not as effective for our specific challenge.
-
-Perhaps most intriguingly, we found that predicting academic performance is remarkably complex – there's no simple formula for success. Factors like personal motivation and life stressors play crucial roles that aren't easily captured in data.
 
 ## Real-World Impact
 Our findings have meaningful implications for educational institutions:
