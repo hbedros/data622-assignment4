@@ -5,12 +5,14 @@
 What drives academic success, and how does mental health play a role? Our research dives into this compelling question by examining two unique datasets that shed light on the intricate relationship between students' mental well-being and their academic achievement. We specifically focused on understanding depression's impact on student life and exploring how various factors influence academic performance.
 
 ## Our Data Journey
-We worked with two fascinating datasets from Kaggle that capture different aspects of student life:
+We worked with two datasets from Kaggle that capture different aspects of student life:
 
-The first dataset tells the story of roughly 300 students, examining how depression intertwines with various aspects of their lives – from how much they sleep to what they eat, and how they handle academic pressure. The second dataset brings us insights from about 250 students, painting a picture of their mental health landscape alongside their academic journey, measured through their cumulative GPA.
+The first dataset tells the story of roughly 300 students, examining how depression intertwines with various aspects of their lives – from how much they sleep to what they eat, and how they handle academic pressure. 
+
+The second dataset brings us insights from about 250 students, painting a picture of their mental health landscape alongside their academic journey, measured through their cumulative GPA.
 
 ### Data Preparation and Cleaning
-Our data preparation process was thorough and methodical:
+Our data preparation process followed the below approach:
 
 For Dataset 1 (Depression):
 - We standardized column names and cleaned inconsistencies
@@ -25,7 +27,7 @@ For Dataset 2 (Academic Performance):
 - Removed rows with missing values to ensure data reliability
 
 ### Feature Engineering
-We carefully engineered our features to capture the nuances in both datasets:
+We engineered our features to capture the nuances in both datasets:
 
 ```python
 # Example of our CGPA range parsing
@@ -46,14 +48,14 @@ def parse_sleep(val):
     return float(val)
 ```
 
-This careful preprocessing ensured our data was ready for the sophisticated analysis that followed.
+This preprocessing ensured our data was ready for the analysis that followed.
 
 ## Our Analytical Approach
-We approached our analysis in two phases, employing both traditional machine learning techniques and advanced methods to gain comprehensive insights from our data.
+We approached our analysis in two phases, employing both traditional machine learning techniques (materials from week 1 - 10) and advanced methods (materials from week 10 - 15) to gain comprehensive insights from our data.
 
 ### Implementation Details
 
-Our analysis involved careful implementation of various machine learning techniques. Here's how we approached each phase:
+Our analysis involved implementation of various machine learning techniques. Here's how we approached each phase:
 
 #### Data Processing Pipeline
 We created a robust preprocessing pipeline using scikit-learn:
@@ -91,7 +93,7 @@ class NeuralNet(nn.Module):
 ### Phase 1: Traditional Machine Learning Approaches
 For our first dataset focused on depression prediction, we implemented:
 
-**Decision Trees**: This straightforward approach achieved an 88.1% accuracy, providing clear decision paths that helped us understand how factors like academic pressure and sleep patterns influence depression risk.
+**Decision Trees**: This approach achieved an 88.1% accuracy, providing clear decision paths that helped us understand how factors like academic pressure and sleep patterns influence depression risk.
 
 **Random Forest**: By combining multiple decision trees, this model reached an impressive 95.0% accuracy, showing how ensemble methods can better capture complex patterns in mental health data.
 
@@ -110,7 +112,7 @@ For our second dataset focusing on GPA prediction, we used:
 ### Phase 2: Advanced Analytical Methods
 We then explored more sophisticated approaches:
 
-**Neural Networks**: These sophisticated models achieved an 80.2% accuracy in identifying depression risk factors, though they sometimes struggled with our relatively small dataset. When predicting GPAs, they showed moderate success with an error margin of about 0.32 points.
+**Neural Networks**: These models achieved an 80.2% accuracy in identifying depression risk factors, though they sometimes struggled with our relatively small dataset. When predicting GPAs, they showed moderate success with an error margin of about 0.32 points.
 
 **Principal Component Analysis (PCA)**: While this dimensional reduction technique helped us simplify our complex data, it came with some trade-offs. Depression prediction accuracy dropped to 70.3%, and GPA predictions showed the highest error margin among our methods at 0.45 points.
 
