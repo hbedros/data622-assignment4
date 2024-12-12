@@ -15,16 +15,16 @@ The second dataset brings us insights from about 250 students, painting a pictur
 Our data preparation process followed the below approach:
 
 For Dataset 1 (Depression):
-- We standardized column names and cleaned inconsistencies
-- Transformed binary responses like "Yes/No" into numerical values (1/0)
-- Applied MinMaxScaler to numerical features including age, academic pressure, study satisfaction, study hours, and financial stress
-- Encoded categorical variables like gender and sleep duration
+- We standardized column names and cleaned inconsistencies.
+- Transformed binary responses like "Yes/No" into numerical values (1/0).
+- Applied MinMaxScaler to numerical features including age, academic pressure, study satisfaction, study hours, and financial stress.
+- Encoded categorical variables like gender and sleep duration.
 
 For Dataset 2 (Academic Performance):
-- Handled complex CGPA ranges by converting them to numerical averages
-- Processed sleep duration data, converting entries like "7-8 hrs" into numerical values
-- Scaled numerical features including CGPA, study satisfaction, and average sleep
-- Removed rows with missing values to ensure data reliability
+- Handled complex CGPA ranges by converting them to numerical averages.
+- Processed sleep duration data, converting entries like "7-8 hrs" into numerical values.
+- Scaled numerical features including CGPA, study satisfaction, and average sleep.
+- Removed rows with missing values to ensure data reliability.
 
 ### Feature Engineering
 We engineered our features to capture the nuances in both datasets:
@@ -55,7 +55,7 @@ We approached our analysis in two phases, employing both traditional machine lea
 
 ### Implementation Details
 
-Our analysis involved implementation of various machine learning techniques. Here's how we approached each phase:
+Our analysis involved the implementation of various machine learning techniques. Here's how we approached each phase:
 
 #### Data Processing Pipeline
 We created a robust preprocessing pipeline using scikit-learn:
@@ -118,7 +118,7 @@ We then explored more sophisticated approaches:
 
 **Bootstrapping**: This statistical technique provided stable but modest results, correctly identifying depression patterns 74.2% of the time and predicting GPAs with an error margin of about 0.34 points.
 
-**K-nearest Neighbors (KNN)**: A standout performer among our advanced methods, KNN proved particularly effective with our smaller datasets. It achieved an 87.1% accuracy in depression prediction and our most precise GPA predictions with an error margin of just 0.25 points.
+**K-nearest Neighbors (KNN)**: A standout performer in Phase 2, KNN proved particularly effective with our smaller datasets. It achieved an 87.1% accuracy in depression prediction and our most precise GPA predictions with an error margin of just 0.25 points.
 
 ## Performance Metrics
 
@@ -146,7 +146,11 @@ We then explored more sophisticated approaches:
 | Dataset 2 | K-nearest neighbors | N/A | 0.1785 | 0.2515 |
 
 ## What We Discovered
-KNN emerged as our most reliable tool, consistently outperforming other methods across both datasets. While neural networks showed promise in detecting depression risk, they were somewhat unstable given our limited data. Traditional techniques like PCA and bootstrapping, while useful in many contexts, weren't ideal for our particular challenge.
+Our analysis revealed that **Random Forest** was the best-performing model overall, achieving an impressive 95.0% accuracy for depression prediction and the lowest MAE and RMSE in GPA prediction during Phase 1. This highlights the strength of ensemble methods in handling complex patterns in our data.
+
+In Phase 2, **K-nearest Neighbors (KNN)** stood out as the top performer, particularly effective with our smaller datasets. KNN achieved 87.1% accuracy in predicting depression risk and the most precise GPA predictions with an error margin of just 0.25 points.
+
+While neural networks showed potential in detecting depression risk factors, they struggled with the relatively small dataset size, leading to less consistent results. Traditional techniques like PCA and bootstrapping provided useful insights but were not as effective for our specific challenge.
 
 Perhaps most intriguingly, we found that predicting academic performance is remarkably complex – there's no simple formula for success. Factors like personal motivation and life stressors play crucial roles that aren't easily captured in data.
 
